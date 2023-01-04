@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.RegistrationFragment"
-    android:background="#1D1F2C">
+    android:background="@drawable/ic_greywallpaper">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
