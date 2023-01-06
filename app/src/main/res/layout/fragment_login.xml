@@ -112,7 +112,7 @@
         android:id="@+id/loginForgotPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="არ ხართ დარეგისტრირებული?"
+        android:text="დაგავიწყდათ პაროლი?"
         android:textColor="#2196F3"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
