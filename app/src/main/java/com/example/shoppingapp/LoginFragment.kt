@@ -8,30 +8,37 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 class LoginFragment: Fragment(R.layout.fragment_login) {
-    private lateinit var loginUsername: EditText
+    private lateinit var loginEmail: EditText
     private lateinit var loginPassword: EditText
     private lateinit var loginSubmit: TextView
     private lateinit var loginCreateAccount: TextView
     private lateinit var loginForgotPassword: TextView
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        loginUsername = view.findViewById(R.id.loginUsername)
+        loginEmail = view.findViewById(R.id.loginEmail)
         loginPassword = view.findViewById(R.id.loginPassword)
         loginCreateAccount = view.findViewById(R.id.createAccount)
         loginSubmit = view.findViewById(R.id.loginSubmit)
         loginForgotPassword = view.findViewById(R.id.loginForgotPass)
-//---------------------------------------------------------------------------------------------------------------------------------------
+//__________________________________________________________________________________________________
         loginSubmit.setOnClickListener {
-            val loginUsername = loginUsername.text.toString()
+            val loginEmail = loginEmail.text.toString()
             val loginPassword = loginPassword.text.toString()
 
-            if (loginUsername.isNotEmpty() && loginUsername.length < 30 && " " !in loginUsername
+            if (loginEmail.isNotEmpty() && loginEmail.length < 30 && " " !in loginEmail
                 && loginPassword.isNotEmpty() && loginPassword.length < 15 && " " !in loginPassword)
             {
-                Toast.makeText(requireContext(),"Welcome!",Toast.LENGTH_SHORT).show()
-                //todo: აქედან გადავალთ მთავარ ფრაგმენტზე + აქ firebase-ის აუთენთიფიკაციას და realtime Database-ს ვიყენებ
+                FirebaseAuth.getInstance().signInWithEmailAndPassword(loginEmail,loginPassword)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful){
+                            Toast.makeText(requireContext(),"Welcome Back!",Toast.LENGTH_SHORT).show()
+                            //todo: მთავარ ფრაგმენტზე გადასვლა
+                        }
+                    }
             }
         }
         loginCreateAccount.setOnClickListener {
