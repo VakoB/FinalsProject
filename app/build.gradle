@@ -48,13 +48,15 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
-    implementation "androidx.navigation:navigation-compose:2.4.0-alpha06"
+    implementation "androidx.navigation:navigation-compose:2.4.0-alpha06"       //navigation=compose
     def nav_version = "2.5.3"
-    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
-    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
-    implementation platform('com.google.firebase:firebase-bom:31.1.1')
-    implementation 'com.google.firebase:firebase-storage:20.1.0'
-    implementation 'de.hdodenhof:circleimageview:3.1.0'                 //circular image
-    implementation 'com.jpardogo.googleprogressbar:library:1.2.0'       //progress bar
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"   //navigation-fragment
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"         //navigation
+    implementation platform('com.google.firebase:firebase-bom:31.1.1')          //firebase
+    implementation 'com.google.firebase:firebase-storage:20.1.0'                //storage for image
+    implementation 'de.hdodenhof:circleimageview:3.1.0'                         //circular image
+    implementation 'com.jpardogo.googleprogressbar:library:1.2.0'               //progress bar
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'                       //viewpager2
+    implementation 'com.google.android.material:material:1.3.0-alpha04'         //tablayout
 
 }

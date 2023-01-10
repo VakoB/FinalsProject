@@ -36,7 +36,7 @@ class LoginFragment: Fragment(R.layout.fragment_login) {
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful){
                             Toast.makeText(requireContext(),"Welcome Back!",Toast.LENGTH_SHORT).show()
-                            //todo: მთავარ ფრაგმენტზე გადასვლა
+                            findNavController().navigate(R.id.mainFragment)
                         }
                     }
             }

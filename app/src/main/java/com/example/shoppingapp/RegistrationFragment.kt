@@ -48,6 +48,8 @@ class RegistrationFragment: Fragment(R.layout.fragment_registration) {
                                 databaseReference.child(uid).setValue(user).addOnCompleteListener {
                                     if (it.isSuccessful){
                                         Toast.makeText(requireContext(),"Welcome!",Toast.LENGTH_SHORT).show()
+                                        findNavController().navigate(R.id.mainFragment)
+                                        //todo: მომხმარებლის მონაცემები უნდა გადავიტანო(ალბათ shared prefrences)
                                     }
                                 }
                             }
