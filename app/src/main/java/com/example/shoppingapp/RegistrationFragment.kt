@@ -49,7 +49,7 @@ class RegistrationFragment: Fragment(R.layout.fragment_registration) {
                                     if (it.isSuccessful){
                                         Toast.makeText(requireContext(),"Welcome!",Toast.LENGTH_SHORT).show()
                                         findNavController().navigate(R.id.mainFragment)
-                                        //todo: მომხმარებლის მონაცემები უნდა გადავიტანო(ალბათ shared prefrences)
+                                        //todo: მომხმარებლის მონაცემები უნდა გადავიტანო(ალბათ shared preferences)
                                     }
                                 }
                             }

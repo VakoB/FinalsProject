@@ -1,5 +1,6 @@
 package com.example.shoppingapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -36,7 +37,9 @@ class LoginFragment: Fragment(R.layout.fragment_login) {
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful){
                             Toast.makeText(requireContext(),"Welcome Back!",Toast.LENGTH_SHORT).show()
-                            findNavController().navigate(R.id.mainFragment)
+                                val intent = Intent(this@LoginFragment.requireContext(), HomeActivity::class.java)
+                                startActivity(intent)
+
                         }
                     }
             }
