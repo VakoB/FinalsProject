@@ -2,4 +2,21 @@
     <string name="app_name">ShoppingApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="heading_1">Quest Nutrition Peanut Butter Protein Cookie"</string>
+    <string name="heading_2">Pure Protein Bars</string>
+    <string name="heading_3">Quest Nutrition High Protein Low Carb, Gluten Free, Keto Friendly, Peanut Butter Cups</string>
+    <string name="heading_4">Ensure Max Protein Nutrition Shake</string>
+    <string name="heading_5">Plant Based Cookbook For Beginners: 1500 Days of Healthy Diet Recipes</string>
+    <string name="heading_6">Quaker Instant Oatmeal, Protein 4 Flavor Variety Pack</string>
+    <string name="heading_7">HORMEL COMPLEATS Chicken Alfredo Microwave Tray</string>
+    <string name="heading_8">Soup Cookbook: Incredibly Delicious Soup Recipes</string>
+
+    <string name="news_1">\"news 1\"</string>
+    <string name="news_2">\"news 2\"</string>
+    <string name="news_3">\"news 3\"</string>
+    <string name="news_4">\"news 4\"</string>
+    <string name="news_5">\"news 5\"</string>
+    <string name="news_6">\"news 6\"</string>
+    <string name="news_7">\"news 7\"</string>
+    <string name="news_8">\"news 7\"</string>
 </resources>
