@@ -21,17 +21,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:gravity="center">
+            android:gravity="center"
+            android:layout_marginTop="20dp">
 
             <com.google.android.material.imageview.ShapeableImageView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/title_image"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:adjustViewBounds="true"
+                android:layout_marginStart="-8dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/protein1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:roundPercent="50" />
         </LinearLayout>
 
         <TextView
