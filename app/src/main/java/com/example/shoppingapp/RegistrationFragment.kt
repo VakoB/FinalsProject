@@ -1,5 +1,6 @@
 package com.example.shoppingapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
@@ -43,12 +44,15 @@ class RegistrationFragment: Fragment(R.layout.fragment_registration) {
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(registerEmail,registerPassword)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful){
+                            val firebaseUser: FirebaseUser = task.result!!.user!!
                             val user = User(registerEmail,registerPassword,registerUsername)
                             if (uid != null){
                                 databaseReference.child(uid).setValue(user).addOnCompleteListener {
                                     if (it.isSuccessful){
                                         Toast.makeText(requireContext(),"Welcome!",Toast.LENGTH_SHORT).show()
-                                        findNavController().navigate(R.id.mainFragment)
+                                        val intent = Intent(this@RegistrationFragment.requireContext(), HomeActivity::class.java)
+                                        startActivity(intent)
+
                                         //todo: მომხმარებლის მონაცემები უნდა გადავიტანო(ალბათ shared preferences)
                                     }
                                 }
