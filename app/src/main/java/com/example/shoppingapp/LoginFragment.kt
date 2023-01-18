@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
@@ -20,6 +21,7 @@ class LoginFragment: Fragment(R.layout.fragment_login) {
     private lateinit var loginForgotPassword: TextView
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (activity as AppCompatActivity).supportActionBar?.hide()
         loginEmail = view.findViewById(R.id.loginEmail)
         loginPassword = view.findViewById(R.id.loginPassword)
         loginCreateAccount = view.findViewById(R.id.createAccount)
@@ -37,8 +39,8 @@ class LoginFragment: Fragment(R.layout.fragment_login) {
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful){
                             Toast.makeText(requireContext(),"Welcome Back!",Toast.LENGTH_SHORT).show()
-                                val intent = Intent(this@LoginFragment.requireContext(), HomeActivity::class.java)
-                                startActivity(intent)
+                            val action = LoginFragmentDirections.actionLoginFragmentToCenterFragment()
+                            findNavController().navigate(action)
 
                         }
                     }

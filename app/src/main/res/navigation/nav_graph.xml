@@ -17,17 +17,19 @@
             android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
             app:destination="@id/forgotPasswordFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            android:id="@+id/action_loginFragment_to_centerFragment"
+            app:destination="@id/centerFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
         android:name="com.example.shoppingapp.RegistrationFragment"
         android:label="RegistrationFragment"
         tools:layout="@layout/fragment_registration">
+
         <action
-            android:id="@+id/action_registrationFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            android:id="@+id/action_registrationFragment_to_centerFragment"
+            app:destination="@id/centerFragment" />
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
@@ -35,8 +37,69 @@
         android:label="ForgotPasswordFragment"
         tools:layout="@layout/fragment_registration"/>
     <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.example.shoppingapp.MainFragment"
-        android:label="MainFragment"
-        tools:layout="@layout/fragment_main"/>
+        android:id="@+id/centerFragment"
+        android:name="com.example.shoppingapp.CenterFragment"
+        android:label="CenterFragment"
+        tools:layout="@layout/fragment_center">
+        <action
+            android:id="@+id/action_centerFragment_self"
+            app:destination="@id/centerFragment" />
+        <action
+            android:id="@+id/action_centerFragment_to_aboutAppFragment"
+            app:destination="@id/aboutAppFragment" />
+        <action
+            android:id="@+id/action_centerFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/action_centerFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_centerFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutAppFragment"
+        android:name="com.example.shoppingapp.fragments.AboutAppFragment"
+        android:label="AboutAppFragment"
+        tools:layout="@layout/fragment_about_app">
+        <action
+            android:id="@+id/action_aboutAppFragment_to_centerFragment"
+            app:destination="@id/centerFragment"
+            app:popUpTo="@navigation/nav_graph"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.shoppingapp.fragments.CartFragment"
+        android:label="CartFragment"
+        tools:layout="@layout/fragment_cart">
+        <action
+            android:id="@+id/action_cartFragment_to_centerFragment"
+            app:destination="@id/centerFragment"
+            app:popUpTo="@navigation/nav_graph"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.shoppingapp.fragments.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settingsFragment_to_centerFragment"
+            app:destination="@id/centerFragment"
+            app:popUpTo="@navigation/nav_graph"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.shoppingapp.fragments.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_centerFragment"
+            app:destination="@id/centerFragment"
+            app:popUpTo="@navigation/nav_graph"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
 </navigation>

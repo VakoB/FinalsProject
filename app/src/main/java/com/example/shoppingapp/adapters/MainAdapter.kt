@@ -15,7 +15,7 @@ class MainAdapter(private val newsList: ArrayList<News>): RecyclerView.Adapter<M
 
     private lateinit var mListener: onItemClickListener
 
-    interface onItemClickListener{
+    interface onItemClickListener {
         fun onItemClick(position: Int)
 
     }
@@ -34,6 +34,7 @@ class MainAdapter(private val newsList: ArrayList<News>): RecyclerView.Adapter<M
         val currentItem = newsList[position]
         holder.Image.setImageResource(currentItem.Image)
         holder.tvHeading.text = currentItem.heading
+        holder.tvPrice.text = currentItem.price.toString()
 
     }
 
@@ -44,6 +45,7 @@ class MainAdapter(private val newsList: ArrayList<News>): RecyclerView.Adapter<M
     class MyViewHolder(itemView: View, listener: onItemClickListener): RecyclerView.ViewHolder(itemView) {
         val Image: ShapeableImageView = itemView.findViewById(R.id.title_image)
         val tvHeading: TextView = itemView.findViewById(R.id.tvHeading)
+        val tvPrice: TextView = itemView.findViewById(R.id.tvPrice)
 
         init {
             itemView.setOnClickListener{

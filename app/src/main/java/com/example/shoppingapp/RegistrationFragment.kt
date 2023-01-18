@@ -1,11 +1,13 @@
 package com.example.shoppingapp
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
@@ -21,8 +23,10 @@ class RegistrationFragment: Fragment(R.layout.fragment_registration) {
     private lateinit var registerToLogin: TextView
     private lateinit var databaseReference: DatabaseReference
     private lateinit var auth: FirebaseAuth
+    private lateinit var sharedPreferences: SharedPreferences
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (activity as AppCompatActivity).supportActionBar?.hide()
         databaseReference = FirebaseDatabase.getInstance().getReference("Users")
         auth = FirebaseAuth.getInstance()
         val uid = auth.currentUser?.uid
@@ -50,8 +54,7 @@ class RegistrationFragment: Fragment(R.layout.fragment_registration) {
                                 databaseReference.child(uid).setValue(user).addOnCompleteListener {
                                     if (it.isSuccessful){
                                         Toast.makeText(requireContext(),"Welcome!",Toast.LENGTH_SHORT).show()
-                                        val intent = Intent(this@RegistrationFragment.requireContext(), HomeActivity::class.java)
-                                        startActivity(intent)
+                                        findNavController().navigate(R.id.centerFragment)
 
                                         //todo: მომხმარებლის მონაცემები უნდა გადავიტანო(ალბათ shared preferences)
                                     }

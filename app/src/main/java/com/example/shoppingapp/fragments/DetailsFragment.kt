@@ -9,5 +9,10 @@ class DetailsFragment: Fragment(R.layout.fragment_details) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+
+
+
+        //todo: recyclerview item-ის დაჭერისას, აქ გადმოვა, გადმოიტანს დატას.
     }
 }

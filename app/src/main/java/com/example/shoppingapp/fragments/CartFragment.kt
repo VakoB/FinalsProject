@@ -6,19 +6,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.shoppingapp.R
-import com.example.shoppingapp.databinding.FragmentSettingsBinding
+import com.example.shoppingapp.databinding.FragmentCartBinding
 
-class SettingsFragment: Fragment(R.layout.fragment_settings) {
-    private lateinit var binding: FragmentSettingsBinding
+class CartFragment: Fragment(R.layout.fragment_cart) {
+    private lateinit var binding: FragmentCartBinding
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (activity as AppCompatActivity).supportActionBar?.hide()
-        binding = FragmentSettingsBinding.bind(view)
+        binding = FragmentCartBinding.bind(view)
         binding.profileBar.setNavigationOnClickListener {
             Navigation.findNavController(requireView()).popBackStack()
 
         }
-
-
+        
     }
 }

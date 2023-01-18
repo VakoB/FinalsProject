@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph3"
+    app:startDestination="@id/firstNestedFragment">
+
+    <fragment
+        android:id="@+id/firstNestedFragment"
+        android:name="com.example.shoppingapp.fragments.FirstNestedFragment"
+        android:label="FirstNestedFragment"
+        tools:layout="@layout/fragment_nested_first">
+
+        <action
+            android:id="@+id/action_firstNestedFragment_to_secondNestedFragment"
+            app:destination="@id/secondNestedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondNestedFragment"
+        android:name="com.example.shoppingapp.fragments.SecondNestedFragment"
+        android:label="SecondNestedFragment"
+        tools:layout="@layout/fragment_nested_second"/>
+</navigation>
