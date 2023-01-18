@@ -51,8 +51,8 @@
             android:id="@+id/action_centerFragment_to_cartFragment"
             app:destination="@id/cartFragment" />
         <action
-            android:id="@+id/action_centerFragment_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
+            android:id="@+id/action_centerFragment_to_listFragment"
+            app:destination="@id/listFragment" />
         <action
             android:id="@+id/action_centerFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
@@ -78,17 +78,16 @@
             app:destination="@id/centerFragment"
             app:popUpTo="@navigation/nav_graph"
             app:popUpToInclusive="true"/>
+
     </fragment>
     <fragment
-        android:id="@+id/settingsFragment"
-        android:name="com.example.shoppingapp.fragments.SettingsFragment"
-        android:label="SettingsFragment"
-        tools:layout="@layout/fragment_settings">
+        android:id="@+id/listFragment"
+        android:name="com.example.shoppingapp.fragments.ListFragment"
+        android:label="ListFragment"
+        tools:layout="@layout/fragment_list">
         <action
-            android:id="@+id/action_settingsFragment_to_centerFragment"
-            app:destination="@id/centerFragment"
-            app:popUpTo="@navigation/nav_graph"
-            app:popUpToInclusive="true"/>
+            android:id="@+id/action_listFragment_to_centerFragment"
+            app:destination="@id/centerFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"

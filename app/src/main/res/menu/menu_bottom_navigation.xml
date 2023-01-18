@@ -12,9 +12,9 @@
         />
         />
     <item
-        android:id="@+id/settingsFragment"
-        android:title="Settings"
-        android:icon="@drawable/ic_settings"
+        android:id="@+id/listFragment"
+        android:title="List"
+        android:icon="@drawable/ic_baseline_list_24"
          />
     <item
         android:id="@+id/cartFragment"
@@ -24,11 +24,11 @@
         />
 
 
+
     <item
         android:id="@+id/profileFragment"
         android:title="Profile"
         android:icon="@drawable/ic_account"
-
         />
 
 

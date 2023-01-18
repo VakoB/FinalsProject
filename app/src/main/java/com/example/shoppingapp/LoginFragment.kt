@@ -1,5 +1,6 @@
 package com.example.shoppingapp
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -42,6 +43,16 @@ class LoginFragment: Fragment(R.layout.fragment_login) {
                             val action = LoginFragmentDirections.actionLoginFragmentToCenterFragment()
                             findNavController().navigate(action)
 
+                        }
+                        else{
+                            androidx.appcompat.app.AlertDialog.Builder(requireContext())                       //fragmentshi requirecontext unda chavwerot
+                                .setTitle("შეცდომა!")
+                                .setMessage("სწორად შეიყვანეთ მონაცემები")
+                                .setPositiveButton("გასაგებია") { dialog, i ->
+
+                                }
+                                .show()
+                                .setCancelable(false)
                         }
                     }
             }

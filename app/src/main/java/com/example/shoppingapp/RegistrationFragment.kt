@@ -1,7 +1,6 @@
 package com.example.shoppingapp
 
-import android.content.Intent
-import android.content.SharedPreferences
+
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
@@ -23,7 +22,6 @@ class RegistrationFragment: Fragment(R.layout.fragment_registration) {
     private lateinit var registerToLogin: TextView
     private lateinit var databaseReference: DatabaseReference
     private lateinit var auth: FirebaseAuth
-    private lateinit var sharedPreferences: SharedPreferences
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (activity as AppCompatActivity).supportActionBar?.hide()
@@ -69,7 +67,18 @@ class RegistrationFragment: Fragment(R.layout.fragment_registration) {
                         }
                     }
             }
+            else{
+                androidx.appcompat.app.AlertDialog.Builder(requireContext())                       //fragmentshi requirecontext unda chavwerot
+                    .setTitle("შეცდომა!")
+                    .setMessage("სწორად შეიყვანეთ მონაცემები")
+                    .setPositiveButton("გასაგებია") { dialog, i ->
+
+                    }
+                    .show()
+                    .setCancelable(false)
+            }
         }
+
         registerToLogin.setOnClickListener {
             findNavController().navigate(R.id.loginFragment)
         }
