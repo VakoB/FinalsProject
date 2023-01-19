@@ -25,9 +25,6 @@ import com.google.android.material.tabs.TabLayout
 import com.google.firebase.auth.FirebaseAuth
 
 class CenterFragment: Fragment(R.layout.fragment_center) {
-    private lateinit var viewPager2: ViewPager2
-    private lateinit var tabLayout: TabLayout
-    private lateinit var viewPagerFragmentAdapter: ViewPagerFragmentAdapter
     private lateinit var adapter: MainAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var newsArrayList: ArrayList<News>
@@ -40,24 +37,8 @@ class CenterFragment: Fragment(R.layout.fragment_center) {
 
     private lateinit var bottomNavigationView: BottomNavigationView
 
-    private var authListener: FirebaseAuth.AuthStateListener? = null
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        authListener = FirebaseAuth.AuthStateListener { firebaseAuth ->
-            val user = firebaseAuth.currentUser
-            if (user != null) {
-                // User is signed in
-                // Do your stuff here
-            } else {
-                // No user is signed in
-                // Show the sign in page
-            }
-        }
-        FirebaseAuth.getInstance().addAuthStateListener(authListener!!)
-
-
 
 
         imageId = arrayListOf(
@@ -93,6 +74,7 @@ class CenterFragment: Fragment(R.layout.fragment_center) {
 
 
         )
+
         heading = arrayListOf(
             getString(R.string.heading_1),
             getString(R.string.heading_2),
@@ -124,6 +106,7 @@ class CenterFragment: Fragment(R.layout.fragment_center) {
 
 
         )
+
         news = arrayListOf(
             getString(R.string.news_1),
             getString(R.string.news_2),
@@ -153,6 +136,7 @@ class CenterFragment: Fragment(R.layout.fragment_center) {
             getString(R.string.news_26),
             getString(R.string.news_27),
         )
+
         price = arrayListOf(
             10,
             20,
@@ -188,7 +172,7 @@ class CenterFragment: Fragment(R.layout.fragment_center) {
         recyclerView = view.findViewById(R.id.recycler_view)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        newsArrayList = arrayListOf<News>()
+        newsArrayList = arrayListOf()
 
         adapter = MainAdapter(newsArrayList)
 
@@ -265,10 +249,7 @@ class CenterFragment: Fragment(R.layout.fragment_center) {
 
         })
     }
-    override fun onDestroyView() {
-        super.onDestroyView()
-        FirebaseAuth.getInstance().removeAuthStateListener(authListener!!)
-    }
+
 
 
 }
