@@ -35,6 +35,7 @@ class MainAdapter(private val newsList: ArrayList<News>): RecyclerView.Adapter<M
         holder.Image.setImageResource(currentItem.Image)
         holder.tvHeading.text = currentItem.heading
         holder.tvPrice.text = currentItem.price.toString()
+        holder.tvTitle.text = currentItem.news
 
     }
 
@@ -46,6 +47,7 @@ class MainAdapter(private val newsList: ArrayList<News>): RecyclerView.Adapter<M
         val Image: ShapeableImageView = itemView.findViewById(R.id.title_image)
         val tvHeading: TextView = itemView.findViewById(R.id.tvHeading)
         val tvPrice: TextView = itemView.findViewById(R.id.tvPrice)
+        val tvTitle: TextView = itemView.findViewById(R.id.tvTitle)
 
         init {
             itemView.setOnClickListener{

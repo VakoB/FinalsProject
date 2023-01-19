@@ -38,6 +38,20 @@
                 android:src="@drawable/protein1"
                 app:roundPercent="50" />
         </LinearLayout>
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="32dp"
+            android:gravity="center"
+            android:text="ok"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/title_image"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvHeading"
@@ -48,7 +62,7 @@
             android:gravity="center"
             android:text="ok"
             android:textColor="@color/black"
-            android:textSize="16sp"
+            android:textSize="10sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/title_image"

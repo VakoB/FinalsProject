@@ -25,7 +25,6 @@ class AboutAppFragment: Fragment(R.layout.fragment_about_app) {
         binding = FragmentAboutAppBinding.bind(view)
         binding.profileBar.setNavigationOnClickListener {
             Navigation.findNavController(requireView()).popBackStack()
-
         }
         viewPager2 = view.findViewById(R.id.viewPager)
         tabLayout = view.findViewById(R.id.tabLayout)

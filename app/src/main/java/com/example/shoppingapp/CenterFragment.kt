@@ -1,8 +1,13 @@
 package com.example.shoppingapp
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -17,6 +22,7 @@ import com.example.shoppingapp.adapters.ViewPagerFragmentAdapter
 import com.example.shoppingapp.fragments.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.tabs.TabLayout
+import com.google.firebase.auth.FirebaseAuth
 
 class CenterFragment: Fragment(R.layout.fragment_center) {
     private lateinit var viewPager2: ViewPager2
@@ -34,8 +40,23 @@ class CenterFragment: Fragment(R.layout.fragment_center) {
 
     private lateinit var bottomNavigationView: BottomNavigationView
 
+    private var authListener: FirebaseAuth.AuthStateListener? = null
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        authListener = FirebaseAuth.AuthStateListener { firebaseAuth ->
+            val user = firebaseAuth.currentUser
+            if (user != null) {
+                // User is signed in
+                // Do your stuff here
+            } else {
+                // No user is signed in
+                // Show the sign in page
+            }
+        }
+        FirebaseAuth.getInstance().addAuthStateListener(authListener!!)
+
 
 
 
@@ -47,7 +68,29 @@ class CenterFragment: Fragment(R.layout.fragment_center) {
             R.drawable.protein5,
             R.drawable.protein6,
             R.drawable.protein7,
-            R.drawable.protein8
+            R.drawable.protein8,
+            R.drawable.protein9,
+            R.drawable.protein10,
+            R.drawable.protein11,
+            R.drawable.protein12,
+            R.drawable.protein13,
+            R.drawable.protein14,
+            R.drawable.protein15,
+            R.drawable.protein16,
+            R.drawable.protein17,
+            R.drawable.protein18,
+            R.drawable.protein19,
+            R.drawable.protein20,
+            R.drawable.protein21,
+            R.drawable.protein22,
+            R.drawable.protein23,
+            R.drawable.protein24,
+            R.drawable.protein25,
+            R.drawable.protein26,
+            R.drawable.protein27
+
+
+
 
         )
         heading = arrayListOf(
@@ -58,7 +101,26 @@ class CenterFragment: Fragment(R.layout.fragment_center) {
             getString(R.string.heading_5),
             getString(R.string.heading_6),
             getString(R.string.heading_7),
-            getString(R.string.heading_8)
+            getString(R.string.heading_8),
+            getString(R.string.heading_9),
+            getString(R.string.heading_10),
+            getString(R.string.heading_11),
+            getString(R.string.heading_12),
+            getString(R.string.heading_13),
+            getString(R.string.heading_14),
+            getString(R.string.heading_15),
+            getString(R.string.heading_16),
+            getString(R.string.heading_17),
+            getString(R.string.heading_18),
+            getString(R.string.heading_19),
+            getString(R.string.heading_20),
+            getString(R.string.heading_21),
+            getString(R.string.heading_22),
+            getString(R.string.heading_23),
+            getString(R.string.heading_24),
+            getString(R.string.heading_25),
+            getString(R.string.heading_26),
+            getString(R.string.heading_27)
 
 
         )
@@ -70,17 +132,55 @@ class CenterFragment: Fragment(R.layout.fragment_center) {
             getString(R.string.news_5),
             getString(R.string.news_6),
             getString(R.string.news_7),
-            getString(R.string.news_8)
+            getString(R.string.news_8),
+            getString(R.string.news_9),
+            getString(R.string.news_10),
+            getString(R.string.news_11),
+            getString(R.string.news_12),
+            getString(R.string.news_13),
+            getString(R.string.news_14),
+            getString(R.string.news_15),
+            getString(R.string.news_16),
+            getString(R.string.news_17),
+            getString(R.string.news_18),
+            getString(R.string.news_19),
+            getString(R.string.news_20),
+            getString(R.string.news_21),
+            getString(R.string.news_22),
+            getString(R.string.news_23),
+            getString(R.string.news_24),
+            getString(R.string.news_25),
+            getString(R.string.news_26),
+            getString(R.string.news_27),
         )
         price = arrayListOf(
-            100,
-            200,
-            150,
-            300,
-            120,
-            199,
-            149,
-            229
+            10,
+            20,
+            15,
+            30,
+            12,
+            19,
+            49,
+            29,
+            23,
+            42,
+            22,
+            42,
+            35,
+            25,
+            23,
+            35,
+            22,
+            53,
+            32,
+            63,
+            36,
+            26,
+            72,
+            21,
+            24,
+            51,
+            43
         )
 
 
@@ -119,11 +219,6 @@ class CenterFragment: Fragment(R.layout.fragment_center) {
                         .navigate(R.id.action_centerFragment_to_profileFragment)
                     true
                 }
-                R.id.cartFragment -> {
-                    Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
-                        .navigate(R.id.action_centerFragment_to_cartFragment)
-                    true
-                }
                 else -> false
 
 
@@ -133,29 +228,46 @@ class CenterFragment: Fragment(R.layout.fragment_center) {
 
     private fun getUserData() {
         for (i in imageId.indices) {
-            val news = News(imageId[i], heading[i], price[i])
+            val news = News(imageId[i], heading[i], price[i], news[i])
             newsArrayList.add(news)
         }
         val adapter = MainAdapter(newsArrayList)
         recyclerView.adapter = adapter
         adapter.setOnItemClickListener(object : MainAdapter.onItemClickListener {
             override fun onItemClick(position: Int) {
-                Toast.makeText(requireContext(),"Item Number:$position",Toast.LENGTH_SHORT).show()
-                val bundle = Bundle()
-                /*bundle.putString("heading",newsArrayList[position].heading)
-                bundle.putString("news",news[position])
-                bundle.putInt("imageId", newsArrayList[position].Image)
-                bundle.putInt("prices",price[position])
-                bundle.putSerializable("key", newsArrayList)*/
 
-                val secondFragment = CartFragment()
-                secondFragment.arguments = bundle
+                val builder = AlertDialog.Builder(requireContext())
+                val dialogView = layoutInflater.inflate(R.layout.dialog_layout, null)
+                val heading = dialogView.findViewById<TextView>(R.id.heading)
+                val imageView = dialogView.findViewById<ImageView>(R.id.imageView)
+                val buttonConfirm = dialogView.findViewById<Button>(R.id.btn_confirm)
+                val buttonDeny = dialogView.findViewById<Button>(R.id.btn_cancel)
+                imageView.setImageResource(newsArrayList[position].Image)
+                if(heading!=null)
+                    heading.setText(news[position])
+
+                builder.setView(dialogView)
+                val dialog = builder.create()
+                buttonConfirm.setOnClickListener {
+                    Toast.makeText(requireContext(),"თქვენ შეიძინეთ ${news[position]}!",Toast.LENGTH_SHORT).show()
+                    dialog.dismiss()
+                }
+                buttonDeny.setOnClickListener {
+                    dialog.cancel()
+                }
+
+
+                dialog.show()
 
 
             }
 
 
         })
+    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        FirebaseAuth.getInstance().removeAuthStateListener(authListener!!)
     }
 
 

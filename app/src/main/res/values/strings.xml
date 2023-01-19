@@ -2,21 +2,71 @@
     <string name="app_name">ShoppingApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="heading_1">Quest Nutrition Peanut Butter Protein Cookie"</string>
-    <string name="heading_2">Pure Protein Bars</string>
-    <string name="heading_3">Quest Nutrition High Protein Low Carb, Gluten Free, Keto Friendly, Peanut Butter Cups</string>
-    <string name="heading_4">Ensure Max Protein Nutrition Shake</string>
-    <string name="heading_5">Plant Based Cookbook For Beginners: 1500 Days of Healthy Diet Recipes</string>
-    <string name="heading_6">Quaker Instant Oatmeal, Protein 4 Flavor Variety Pack</string>
-    <string name="heading_7">HORMEL COMPLEATS Chicken Alfredo Microwave Tray</string>
-    <string name="heading_8">Soup Cookbook: Incredibly Delicious Soup Recipes</string>
+    <string name="heading_1">peanus butter cookes, high protein cookies</string>
+    <string name="heading_2">clean protein bars, good for health</string>
+    <string name="heading_3">Quest Nutrition high protein, low sugar</string>
+    <string name="heading_4">Maximum protein shake</string>
+    <string name="heading_5">Cookbook based on plants</string>
+    <string name="heading_6">Quaker Instant Oatmeal, 4 various protein flavour</string>
+    <string name="heading_7">HORMEL COMPLEATS Chicken </string>
+    <string name="heading_8">LEAN AND GREEN COOKBOOK FOR BEGINNERS 2022: Burn Fat Quickly</string>
+    <string name="heading_9">Soup Cookbook: very delicious soup recipe</string>
+    <string name="heading_10">Air Fryer Cookbook: Mellow recipes for your air fryer.</string>
+    <string name="heading_11">Quest Tortilla Style Protein Chips Variety Pack</string>
+    <string name="heading_12">Atkins Gluten Free Protein-Rich Shake</string>
+    <string name="heading_13">Reese Wild Rice Harvest Bowl | Black Beans, Tomatoes, Corn </string>
+    <string name="heading_14">Healthy Delights Nature Fuel, Chocolate Milkshake</string>
+    <string name="heading_15">Jack Link Beef Jerky Variety Pack</string>
+    <string name="heading_16">Diabetic Cookbook for Beginners</string>
+    <string name="heading_17">Sensible Portions Garden Veggie Straws</string>
+    <string name="heading_18">Anti-Inflammatory Diet Cookbook</string>
+    <string name="heading_19">Power Up Trail Mix, Protein Packed Trail Mix</string>
+    <string name="heading_20">Plant-Based Diet: How to Lose Weight, Improve Your Health</string>
+    <string name="heading_21">Foodwise: A Fresh Approach to Nutrition with 100 Delicious Recipes</string>
+    <string name="heading_22">King Arthur 00 Pizza Flour, Non-GMO Project Verified</string>
+    <string name="heading_23">Bowls Cookbook: Learn How to Prepare Tasty and Healty One-Bowl Meals</string>
+    <string name="heading_24">INVIGOR8 Superfood Shake (Salted Caramel) and Fat Burner Bundle.</string>
+    <string name="heading_25">OWYN Pro Elite Vegan High Protein Keto Shake</string>
+    <string name="heading_26">Barilla Chickpea Rotini Pasta, Vegan</string>
+    <string name="heading_27">Orgain Organic Unflavored Vegan Protein Powder</string>
+    <string name="heading_28">ZonePerfect Protein Bars, 18 vitamins</string>
 
-    <string name="news_1">\"news 1\"</string>
-    <string name="news_2">\"news 2\"</string>
-    <string name="news_3">\"news 3\"</string>
-    <string name="news_4">\"news 4\"</string>
-    <string name="news_5">\"news 5\"</string>
-    <string name="news_6">\"news 6\"</string>
-    <string name="news_7">\"news 7\"</string>
-    <string name="news_8">\"news 7\"</string>
+
+
+
+
+
+
+
+
+    <string name="news_1">Peanut butter cookies</string>
+    <string name="news_2">Protein Bars</string>
+    <string name="news_3">Quest Nutrition</string>
+    <string name="news_4">Protein shake</string>
+    <string name="news_5">Cookbook</string>
+    <string name="news_6">Quaker Oatmeal</string>
+    <string name="news_7">HORMEL Chicken</string>
+    <string name="news_8">Cookbook</string>
+    <string name="news_9">Soup Cookbook</string>
+    <string name="news_10">Air Fryer Cookbook</string>
+    <string name="news_11">Protein Chips</string>
+    <string name="news_12">Protein-Rich Shake</string>
+    <string name="news_13">Rice Harvest Bowl</string>
+    <string name="news_14">Chocolate Milkshake</string>
+    <string name="news_15">Jack Link Beef Jerky</string>
+    <string name="news_16">Diabetic Cookbook</string>
+    <string name="news_17">Garden Veggie Straws</string>
+    <string name="news_18">Diet Cookbook</string>
+    <string name="news_19">Protein Packed Trail Mix</string>
+    <string name="news_20">Plant-Based Diet</string>
+    <string name="news_21">Foodwise</string>
+    <string name="news_22">King Arthur#</string>
+    <string name="news_23">Bowls Cookbook</string>
+    <string name="news_24">INVIGOR8 Superfood Shake</string>
+    <string name="news_25">High Protein Shake</string>
+    <string name="news_26">Barilla Chickpea</string>
+    <string name="news_27">Vegan Protein Powder</string>
+    <string name="news_28">ZonePerfect Protein Bars</string>
+
+
 </resources>
