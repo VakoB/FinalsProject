@@ -27,7 +27,7 @@ class RegistrationFragment: Fragment(R.layout.fragment_registration) {
         (activity as AppCompatActivity).supportActionBar?.hide()
         databaseReference = FirebaseDatabase.getInstance().getReference("Users")
         auth = FirebaseAuth.getInstance()
-        val uid = auth.currentUser?.uid
+
         registerUsername = view.findViewById(R.id.registerUsername)
         registerEmail = view.findViewById(R.id.registerEmail)
         registerPassword = view.findViewById(R.id.registerPassword)
@@ -46,7 +46,7 @@ class RegistrationFragment: Fragment(R.layout.fragment_registration) {
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(registerEmail,registerPassword)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful){
-                            val firebaseUser: FirebaseUser = task.result!!.user!!
+                            val uid = auth.currentUser?.uid
                             val user = User(registerEmail,registerPassword,registerUsername)
                             if (uid != null){
                                 databaseReference.child(uid).setValue(user).addOnCompleteListener {
@@ -54,7 +54,6 @@ class RegistrationFragment: Fragment(R.layout.fragment_registration) {
                                         Toast.makeText(requireContext(),"Welcome!",Toast.LENGTH_SHORT).show()
                                         findNavController().navigate(R.id.centerFragment)
 
-                                        //todo: მომხმარებლის მონაცემები უნდა გადავიტანო(ალბათ shared preferences)
                                     }
                                 }
                             }
