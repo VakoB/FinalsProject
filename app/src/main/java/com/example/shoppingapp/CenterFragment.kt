@@ -5,6 +5,8 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -23,6 +25,7 @@ class CenterFragment: Fragment(R.layout.fragment_center) {
     private lateinit var adapter: MainAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var newsArrayList: ArrayList<News>
+    private val sharedViewModel: SharedViewModel by activityViewModels()
 
     lateinit var imageId: ArrayList<Int>
     lateinit var heading: ArrayList<String>
@@ -132,8 +135,6 @@ class CenterFragment: Fragment(R.layout.fragment_center) {
         for (i in imageId.indices) {
             val news = News(imageId[i], heading[i], price[i])
             newsArrayList.add(news)
-
-
         }
         val adapter = MainAdapter(newsArrayList)
         recyclerView.adapter = adapter
@@ -148,7 +149,12 @@ class CenterFragment: Fragment(R.layout.fragment_center) {
                 val fragment = CartFragment()
                 fragment.arguments = bundle
 
+                val viewModel = ViewModelProvider(this@CenterFragment).get(SharedViewModel::class.java)
+                viewModel.arrayList.value = newsArrayList
+
+
             }
+
 
         })
     }

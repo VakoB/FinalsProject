@@ -5,12 +5,16 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import com.example.shoppingapp.R
+import com.example.shoppingapp.SharedViewModel
 import com.example.shoppingapp.databinding.FragmentCartBinding
 
 class CartFragment: Fragment(R.layout.fragment_cart) {
+    private val sharedViewModel: SharedViewModel by activityViewModels()
     private lateinit var binding: FragmentCartBinding
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -19,20 +23,10 @@ class CartFragment: Fragment(R.layout.fragment_cart) {
         binding.profileBar.setNavigationOnClickListener {
             Navigation.findNavController(requireView()).popBackStack()
 
-            val bundle = arguments
-            val heading = bundle?.getString("heading")
-            val image = bundle?.getInt("imageId")
-            val news = bundle?.getString("news")
-            val prices = bundle?.getInt("prices")
-
-            if (image != null) {
-                binding.rvImages.setImageResource(image)
-            }
-
-
-
-
         }
+        val viewModel = ViewModelProvider(this@CartFragment).get(SharedViewModel::class.java)
+        val arrayList = viewModel.arrayList.value
+
 
 
 

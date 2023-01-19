@@ -27,7 +27,7 @@ class ForgotPasswordFragment: Fragment(R.layout.fragment_forgot_password) {
 
             val passwordField = etpassword
             val newPassword = passwordField.text.toString()
-            changePassword(newPassword)
+            //changePassword(newPassword)
             val sPassword = etpassword.text.toString()
             auth.sendPasswordResetEmail(sPassword)
                 .addOnCompleteListener {
