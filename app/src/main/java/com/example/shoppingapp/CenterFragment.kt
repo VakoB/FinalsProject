@@ -142,15 +142,14 @@ class CenterFragment: Fragment(R.layout.fragment_center) {
             override fun onItemClick(position: Int) {
                 Toast.makeText(requireContext(),"Item Number:$position",Toast.LENGTH_SHORT).show()
                 val bundle = Bundle()
-                bundle.putString("heading",newsArrayList[position].heading)
+                /*bundle.putString("heading",newsArrayList[position].heading)
                 bundle.putString("news",news[position])
                 bundle.putInt("imageId", newsArrayList[position].Image)
                 bundle.putInt("prices",price[position])
-                val fragment = CartFragment()
-                fragment.arguments = bundle
+                bundle.putSerializable("key", newsArrayList)*/
 
-                val viewModel = ViewModelProvider(this@CenterFragment).get(SharedViewModel::class.java)
-                viewModel.arrayList.value = newsArrayList
+                val secondFragment = CartFragment()
+                secondFragment.arguments = bundle
 
 
             }

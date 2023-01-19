@@ -9,11 +9,16 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
+import com.example.shoppingapp.News
 import com.example.shoppingapp.R
 import com.example.shoppingapp.SharedViewModel
 import com.example.shoppingapp.databinding.FragmentCartBinding
 
 class CartFragment: Fragment(R.layout.fragment_cart) {
+    private lateinit var imagesList: ArrayList<Int>
+    private lateinit var heading: ArrayList<String>
+    private lateinit var prices: ArrayList<Int>
+
     private val sharedViewModel: SharedViewModel by activityViewModels()
     private lateinit var binding: FragmentCartBinding
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -25,11 +30,9 @@ class CartFragment: Fragment(R.layout.fragment_cart) {
 
         }
         val viewModel = ViewModelProvider(this@CartFragment).get(SharedViewModel::class.java)
-        val arrayList = viewModel.arrayList.value
-
-
 
 
 
     }
+
 }

@@ -11,6 +11,7 @@ import androidx.compose.animation.core.snap
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.example.shoppingapp.*
 import com.example.shoppingapp.R
 import com.example.shoppingapp.databinding.FragmentHomeBinding
@@ -71,7 +72,21 @@ class ProfileFragment: Fragment(R.layout.fragment_profile) {
             }
 
         })
+
+        binding.changePass.setOnClickListener {
+
+            findNavController().navigate(R.id.changePasswordFragment)
+
+        }
+
     }
+
+
+
+
+
+
+
 
 
 }
