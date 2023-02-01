@@ -16,6 +16,7 @@ import com.example.shoppingapp.*
 import com.example.shoppingapp.R
 import com.example.shoppingapp.databinding.FragmentHomeBinding
 import com.example.shoppingapp.databinding.FragmentProfileBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
@@ -78,8 +79,14 @@ class ProfileFragment: Fragment(R.layout.fragment_profile) {
             findNavController().navigate(R.id.changePasswordFragment)
 
         }
+        binding.signOut.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            val action = ProfileFragmentDirections.actionProfileFragmentToLoginFragment()
+            findNavController().navigate(action)
+        }
 
     }
+
 
 
 

@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -21,6 +22,9 @@ class LoginFragment: Fragment(R.layout.fragment_login) {
     private lateinit var loginCreateAccount: TextView
     private lateinit var loginForgotPassword: TextView
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        if (FirebaseAuth.getInstance().currentUser != null){
+            findNavController().navigate(R.id.centerFragment)
+        }
         super.onViewCreated(view, savedInstanceState)
         (activity as AppCompatActivity).supportActionBar?.hide()
         loginEmail = view.findViewById(R.id.loginEmail)
